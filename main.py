@@ -3,7 +3,7 @@ from openai import OpenAI
 # 1. 初始化客户端（填入地址和真实 Key）
 client = OpenAI(
     base_url="https://openai.cuc.edu.cn/v1",
-    api_key="sk-EYcFUVIYYFRus8CsGl4baRWrlf81rhrbpBsnMyNblJcoWr1W",
+    api_key="你的key",
 )
 
 # 2. 发送请求给大模型
