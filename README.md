@@ -1,6 +1,6 @@
 # 🤖 RAG 本地知识库问答助手
 
-👉 **[在线体验地址（点击直接试玩）](https://ai-chatbot-terminal-qypshskplb763mbr2s2h7z.streamlit.app/)**
+👉 **[在线体验地址（点击直接试玩）](https://ai-chatbot-terminal-qvpshskplb763mbr2s2h7z.streamlit.app/)**
 
 基于本地文档和大语言模型（DeepSeek）构建的 RAG（检索增强生成）问答系统。支持用户在网页端上传私有 TXT 文档，系统通过向量检索与 Prompt 工程，生成基于文档内容的精准回答，有效解决大模型的“幻觉”问题。
 
