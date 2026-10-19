@@ -8,8 +8,13 @@ import streamlit as st
 
 st.set_page_config(page_title="RAG 助手", page_icon="🤖")
 st.title("🤖 RAG 知识库问答助手")
-
-
+try:
+    # 在 Streamlit 线上环境，读取你在网页后台配置的 API_KEY
+    API_KEY = st.secrets["API_KEY"]
+except Exception:
+    # 在本地 PyCharm 环境运行（或者没配置 secrets）时，会走这里
+    # 你本地测试可以填个真 Key，但上传前记得删掉或者留空
+    API_KEY = ""
 # 1. 缓存模型和数据库连接（不包含交互组件）
 @st.cache_resource
 def load_resources():
@@ -17,7 +22,7 @@ def load_resources():
     db_client = chromadb.PersistentClient(path="./chroma_store")
     ai_client = OpenAI(
         base_url="https://openai.cuc.edu.cn/v1",
-        api_key=""
+        api_key=API_KEY,
     )
     return model, db_client, ai_client
 
