@@ -2,3 +2,5 @@ streamlit
 sentence-transformers
 chromadb
 openai
+python-dotenv
+pdfpy
