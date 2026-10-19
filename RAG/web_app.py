@@ -17,7 +17,7 @@ def load_resources():
     db_client = chromadb.PersistentClient(path="./chroma_store")
     ai_client = OpenAI(
         base_url="https://openai.cuc.edu.cn/v1",
-        api_key="sk-EYcFUVIYYFRus8CsGl4baRWrlf81rhrbpBsnMyNblJcoWr1W"  # ⚠️ 记得换
+        api_key=""
     )
     return model, db_client, ai_client
 
@@ -69,7 +69,7 @@ if uploaded_file is not None:
                 context = "\n\n".join(results['documents'][0])
 
             # 生成
-            prompt = f"你是一个热爱蛊真人小说的老程序员。请根据以下资料回答：\n\n资料：{context}\n\n问题：{query}"
+            prompt = f"你是一个老程序员。请根据以下资料回答：\n\n资料：{context}\n\n问题：{query}"
             response = ai_client.chat.completions.create(
                 model="cuc/deepseek",
                 messages=[{"role": "user", "content": prompt}]
