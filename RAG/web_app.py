@@ -91,7 +91,7 @@ if uploaded_file is not None:
                 # 普通问题，走向量检索
                 query_vector = model.encode([query]).tolist()
                 results = collection.query(query_embeddings=query_vector, n_results=3) # 多捞一点
-                best_chunks = results['documents'][0] # 定义了你之前漏掉的变量
+                best_chunks = results['documents'][0] # 定义了之前漏掉的变量
 
             # 拼装带标号的上下文
             context_with_citations = ""
